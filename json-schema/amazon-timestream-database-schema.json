@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aws.amazon.com/timestream/schemas/database",
+  "title": "Database",
+  "description": "Schema for an Amazon Timestream database resource that serves as a container for tables storing time series data with configurable encryption and retention settings.",
+  "type": "object",
+  "properties": {
+    "Arn": {
+      "type": "string",
+      "description": "The Amazon Resource Name that uniquely identifies this database.",
+      "pattern": "^arn:aws[a-zA-Z-]*:timestream:[a-z]{2}-[a-z]+-\\d:\\d{12}:database/.+$"
+    },
+    "DatabaseName": {
+      "type": "string",
+      "description": "The name of the Timestream database.",
+      "minLength": 3,
+      "maxLength": 256,
+      "pattern": "^[a-zA-Z0-9_.-]+$"
+    },
+    "TableCount": {
+      "type": "integer",
+      "description": "The total number of tables found within the Timestream database.",
+      "minimum": 0
+    },
+    "KmsKeyId": {
+      "type": "string",
+      "description": "The identifier of the KMS key used to encrypt the data stored in the database.",
+      "maxLength": 2048
+    },
+    "CreationTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The time when the database was created, in ISO 8601 format."
+    },
+    "LastUpdatedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The last time that this database was updated, in ISO 8601 format."
+    },
+    "Tables": {
+      "type": "array",
+      "description": "The tables contained within this database.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Arn": {
+            "type": "string",
+            "description": "The Amazon Resource Name that uniquely identifies this table."
+          },
+          "TableName": {
+            "type": "string",
+            "description": "The name of the Timestream table.",
+            "minLength": 3,
+            "maxLength": 256
+          },
+          "DatabaseName": {
+            "type": "string",
+            "description": "The name of the database that contains this table."
+          },
+          "TableStatus": {
+            "type": "string",
+            "description": "The current state of the table.",
+            "enum": ["ACTIVE", "DELETING"]
+          },
+          "RetentionProperties": {
+            "type": "object",
+            "description": "The retention duration configuration for the table.",
+            "properties": {
+              "MemoryStoreRetentionPeriodInHours": {
+                "type": "integer",
+                "description": "The duration for which data must be stored in the memory store.",
+                "minimum": 1,
+                "maximum": 8766
+              },
+              "MagneticStoreRetentionPeriodInDays": {
+                "type": "integer",
+                "description": "The duration for which data must be stored in the magnetic store.",
+                "minimum": 1,
+                "maximum": 73000
+              }
+            },
+            "required": ["MemoryStoreRetentionPeriodInHours", "MagneticStoreRetentionPeriodInDays"]
+          },
+          "MagneticStoreWriteProperties": {
+            "type": "object",
+            "description": "Configuration for writing to the magnetic store.",
+            "properties": {
+              "EnableMagneticStoreWrites": {
+                "type": "boolean",
+                "description": "A flag to enable magnetic store writes."
+              },
+              "MagneticStoreRejectedDataLocation": {
+                "type": "object",
+                "properties": {
+                  "S3Configuration": {
+                    "type": "object",
+                    "properties": {
+                      "BucketName": {
+                        "type": "string"
+                      },
+                      "ObjectKeyPrefix": {
+                        "type": "string"
+                      },
+                      "EncryptionOption": {
+                        "type": "string",
+                        "enum": ["SSE_S3", "SSE_KMS"]
+                      },
+                      "KmsKeyId": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "required": ["EnableMagneticStoreWrites"]
+          },
+          "CreationTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "LastUpdatedTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": ["TableName", "DatabaseName"]
+      }
+    }
+  },
+  "required": ["Arn", "DatabaseName"]
+}

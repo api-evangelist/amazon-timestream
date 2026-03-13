@@ -1,0 +1,66 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "aws": "https://aws.amazon.com/timestream/schemas/",
+    "timestream": "https://docs.aws.amazon.com/timestream/latest/developerguide/API_Reference.html#",
+    "Database": {
+      "@id": "aws:Database",
+      "@context": {
+        "DatabaseName": "schema:name",
+        "Arn": "aws:arn",
+        "TableCount": "schema:size",
+        "KmsKeyId": "aws:kmsKeyId",
+        "CreationTime": "schema:dateCreated",
+        "LastUpdatedTime": "schema:dateModified"
+      }
+    },
+    "Table": {
+      "@id": "aws:Table",
+      "@context": {
+        "TableName": "schema:name",
+        "DatabaseName": "schema:isPartOf",
+        "Arn": "aws:arn",
+        "TableStatus": "aws:tableStatus",
+        "RetentionProperties": "aws:RetentionProperties",
+        "CreationTime": "schema:dateCreated",
+        "LastUpdatedTime": "schema:dateModified"
+      }
+    },
+    "RetentionProperties": {
+      "@id": "aws:RetentionProperties",
+      "@context": {
+        "MemoryStoreRetentionPeriodInHours": "aws:memoryStoreRetention",
+        "MagneticStoreRetentionPeriodInDays": "aws:magneticStoreRetention"
+      }
+    },
+    "Record": {
+      "@id": "aws:Record",
+      "@context": {
+        "Dimensions": "aws:dimensions",
+        "MeasureName": "schema:name",
+        "MeasureValue": "schema:value",
+        "MeasureValueType": "schema:additionalType",
+        "Time": "schema:dateCreated",
+        "TimeUnit": "aws:timeUnit",
+        "Version": "schema:version"
+      }
+    },
+    "Dimension": {
+      "@id": "aws:Dimension",
+      "@context": {
+        "Name": "schema:name",
+        "Value": "schema:value",
+        "DimensionValueType": "schema:additionalType"
+      }
+    },
+    "QueryResult": {
+      "@id": "aws:QueryResult",
+      "@context": {
+        "QueryId": "schema:identifier",
+        "Rows": "aws:rows",
+        "ColumnInfo": "aws:columnInfo",
+        "QueryStatus": "aws:queryStatus"
+      }
+    }
+  }
+}

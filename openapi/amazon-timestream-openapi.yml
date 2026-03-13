@@ -1,0 +1,457 @@
+openapi: 3.0.0
+info:
+  title: Amazon Timestream
+  description: Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.
+  version: '2018-11-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/timestream/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://ingest.timestream.amazonaws.com
+    description: Amazon Timestream Write API endpoint
+paths:
+  /:
+    post:
+      operationId: CreateDatabase
+      summary: Create Database
+      description: Creates a new Timestream database for storing time series data with configurable encryption settings.
+      headers:
+        X-Amz-Target:
+          description: The target API operation.
+          schema:
+            type: string
+            enum:
+              - Timestream_20181101.CreateDatabase
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+                KmsKeyId:
+                  type: string
+                  description: The KMS key for the database.
+                Tags:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Key:
+                        type: string
+                      Value:
+                        type: string
+              required:
+                - DatabaseName
+      responses:
+        '200':
+          description: Database created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Database:
+                    $ref: '#/components/schemas/Database'
+      tags:
+        - Databases
+
+  /#DescribeDatabase:
+    post:
+      operationId: DescribeDatabase
+      summary: Describe Database
+      description: Returns information about the database, including the database name, time that the database was last updated, and the total number of tables found within the database.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+              required:
+                - DatabaseName
+      responses:
+        '200':
+          description: Database details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Database:
+                    $ref: '#/components/schemas/Database'
+      tags:
+        - Databases
+
+  /#ListDatabases:
+    post:
+      operationId: ListDatabases
+      summary: List Databases
+      description: Returns a list of your Timestream databases, with pagination support.
+      requestBody:
+        required: false
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                NextToken:
+                  type: string
+                MaxResults:
+                  type: integer
+                  minimum: 1
+                  maximum: 20
+      responses:
+        '200':
+          description: List of databases.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Databases:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Database'
+                  NextToken:
+                    type: string
+      tags:
+        - Databases
+
+  /#CreateTable:
+    post:
+      operationId: CreateTable
+      summary: Create Table
+      description: Creates a new table in an existing database with configurable data retention policies for memory store and magnetic store.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+                TableName:
+                  type: string
+                  description: The name of the Timestream table.
+                RetentionProperties:
+                  type: object
+                  properties:
+                    MemoryStoreRetentionPeriodInHours:
+                      type: integer
+                      description: The duration for which data must be stored in the memory store.
+                    MagneticStoreRetentionPeriodInDays:
+                      type: integer
+                      description: The duration for which data must be stored in the magnetic store.
+                MagneticStoreWriteProperties:
+                  type: object
+                  properties:
+                    EnableMagneticStoreWrites:
+                      type: boolean
+                Tags:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Key:
+                        type: string
+                      Value:
+                        type: string
+              required:
+                - DatabaseName
+                - TableName
+      responses:
+        '200':
+          description: Table created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Table:
+                    type: object
+                    properties:
+                      Arn:
+                        type: string
+                      TableName:
+                        type: string
+                      DatabaseName:
+                        type: string
+                      TableStatus:
+                        type: string
+                      RetentionProperties:
+                        type: object
+      tags:
+        - Tables
+
+  /#DescribeTable:
+    post:
+      operationId: DescribeTable
+      summary: Describe Table
+      description: Returns information about the table, including the table name, database name, retention duration of the memory store and the magnetic store.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                TableName:
+                  type: string
+              required:
+                - DatabaseName
+                - TableName
+      responses:
+        '200':
+          description: Table details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Table:
+                    type: object
+                    properties:
+                      Arn:
+                        type: string
+                      TableName:
+                        type: string
+                      DatabaseName:
+                        type: string
+                      TableStatus:
+                        type: string
+                      RetentionProperties:
+                        type: object
+                      MagneticStoreWriteProperties:
+                        type: object
+      tags:
+        - Tables
+
+  /#WriteRecords:
+    post:
+      operationId: WriteRecords
+      summary: Write Records
+      description: Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+                TableName:
+                  type: string
+                  description: The name of the Timestream table.
+                CommonAttributes:
+                  type: object
+                  description: A record containing the common measure, dimension, and time information.
+                  properties:
+                    Dimensions:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Name:
+                            type: string
+                          Value:
+                            type: string
+                          DimensionValueType:
+                            type: string
+                    MeasureName:
+                      type: string
+                    MeasureValue:
+                      type: string
+                    MeasureValueType:
+                      type: string
+                      enum:
+                        - DOUBLE
+                        - BIGINT
+                        - VARCHAR
+                        - BOOLEAN
+                        - TIMESTAMP
+                        - MULTI
+                    Time:
+                      type: string
+                    TimeUnit:
+                      type: string
+                      enum:
+                        - MILLISECONDS
+                        - SECONDS
+                        - MICROSECONDS
+                        - NANOSECONDS
+                Records:
+                  type: array
+                  description: An array of records containing the unique measure, dimension, time, and version attributes.
+                  items:
+                    type: object
+                    properties:
+                      Dimensions:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            Name:
+                              type: string
+                            Value:
+                              type: string
+                      MeasureName:
+                        type: string
+                      MeasureValue:
+                        type: string
+                      MeasureValueType:
+                        type: string
+                      MeasureValues:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            Name:
+                              type: string
+                            Value:
+                              type: string
+                            Type:
+                              type: string
+                      Time:
+                        type: string
+                      TimeUnit:
+                        type: string
+                      Version:
+                        type: integer
+              required:
+                - DatabaseName
+                - TableName
+                - Records
+      responses:
+        '200':
+          description: Records written successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  RecordsIngested:
+                    type: object
+                    properties:
+                      Total:
+                        type: integer
+                      MemoryStore:
+                        type: integer
+                      MagneticStore:
+                        type: integer
+      tags:
+        - Write
+
+  /#Query:
+    post:
+      operationId: Query
+      summary: Query
+      description: Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                QueryString:
+                  type: string
+                  description: The SQL query string to execute.
+                ClientToken:
+                  type: string
+                NextToken:
+                  type: string
+                MaxRows:
+                  type: integer
+              required:
+                - QueryString
+      responses:
+        '200':
+          description: Query results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  QueryId:
+                    type: string
+                  Rows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Data:
+                          type: array
+                          items:
+                            type: object
+                  ColumnInfo:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Name:
+                          type: string
+                        Type:
+                          type: object
+                  NextToken:
+                    type: string
+                  QueryStatus:
+                    type: object
+      tags:
+        - Query
+
+components:
+  schemas:
+    Database:
+      type: object
+      description: A Timestream database resource containing tables for time series data storage.
+      properties:
+        Arn:
+          type: string
+          description: The Amazon Resource Name that uniquely identifies this database.
+        DatabaseName:
+          type: string
+          description: The name of the Timestream database.
+        TableCount:
+          type: integer
+          description: The total number of tables found within the Timestream database.
+        KmsKeyId:
+          type: string
+          description: The identifier of the KMS key used to encrypt the data stored in the database.
+        CreationTime:
+          type: string
+          format: date-time
+          description: The time when the database was created.
+        LastUpdatedTime:
+          type: string
+          format: date-time
+          description: The last time that this database was updated.
+      required:
+        - Arn
+        - DatabaseName
+
+tags:
+  - name: Databases
+    description: Operations for managing Timestream databases.
+  - name: Tables
+    description: Operations for managing Timestream tables.
+  - name: Write
+    description: Operations for writing time series data.
+  - name: Query
+    description: Operations for querying time series data.
