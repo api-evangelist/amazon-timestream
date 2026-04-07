@@ -17,7 +17,7 @@ paths:
   /:
     post:
       operationId: CreateDatabase
-      summary: Create Database
+      summary: Amazon Timestream Create Database
       description: Creates a new Timestream database for storing time series data with configurable encryption settings.
       headers:
         X-Amz-Target:
@@ -66,7 +66,7 @@ paths:
   /#DescribeDatabase:
     post:
       operationId: DescribeDatabase
-      summary: Describe Database
+      summary: Amazon Timestream Describe Database
       description: Returns information about the database, including the database name, time that the database was last updated, and the total number of tables found within the database.
       requestBody:
         required: true
@@ -96,7 +96,7 @@ paths:
   /#ListDatabases:
     post:
       operationId: ListDatabases
-      summary: List Databases
+      summary: Amazon Timestream List Databases
       description: Returns a list of your Timestream databases, with pagination support.
       requestBody:
         required: false
@@ -131,7 +131,7 @@ paths:
   /#CreateTable:
     post:
       operationId: CreateTable
-      summary: Create Table
+      summary: Amazon Timestream Create Table
       description: Creates a new table in an existing database with configurable data retention policies for memory store and magnetic store.
       requestBody:
         required: true
@@ -199,7 +199,7 @@ paths:
   /#DescribeTable:
     post:
       operationId: DescribeTable
-      summary: Describe Table
+      summary: Amazon Timestream Describe Table
       description: Returns information about the table, including the table name, database name, retention duration of the memory store and the magnetic store.
       requestBody:
         required: true
@@ -244,7 +244,7 @@ paths:
   /#WriteRecords:
     post:
       operationId: WriteRecords
-      summary: Write Records
+      summary: Amazon Timestream Write Records
       description: Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput.
       requestBody:
         required: true
@@ -361,7 +361,7 @@ paths:
   /#Query:
     post:
       operationId: Query
-      summary: Query
+      summary: Amazon Timestream Query
       description: Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables.
       requestBody:
         required: true
