@@ -449,9 +449,9 @@ components:
 tags:
   - name: Databases
     description: Operations for managing Timestream databases.
+  - name: Query
+    description: Operations for querying time series data.
   - name: Tables
     description: Operations for managing Timestream tables.
   - name: Write
     description: Operations for writing time series data.
-  - name: Query
-    description: Operations for querying time series data.
