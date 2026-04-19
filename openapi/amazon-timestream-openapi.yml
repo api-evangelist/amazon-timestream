@@ -11,8 +11,8 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
-  - url: https://ingest.timestream.amazonaws.com
-    description: Amazon Timestream Write API endpoint
+- url: https://ingest.timestream.amazonaws.com
+  description: Amazon Timestream Write API endpoint
 paths:
   /:
     post:
@@ -25,7 +25,7 @@ paths:
           schema:
             type: string
             enum:
-              - Timestream_20181101.CreateDatabase
+            - Timestream_20181101.CreateDatabase
       requestBody:
         required: true
         content:
@@ -49,7 +49,7 @@ paths:
                       Value:
                         type: string
               required:
-                - DatabaseName
+              - DatabaseName
       responses:
         '200':
           description: Database created successfully.
@@ -61,8 +61,11 @@ paths:
                   Database:
                     $ref: '#/components/schemas/Database'
       tags:
-        - Databases
+      - Databases
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#DescribeDatabase:
     post:
       operationId: DescribeDatabase
@@ -79,7 +82,7 @@ paths:
                   type: string
                   description: The name of the Timestream database.
               required:
-                - DatabaseName
+              - DatabaseName
       responses:
         '200':
           description: Database details.
@@ -91,8 +94,11 @@ paths:
                   Database:
                     $ref: '#/components/schemas/Database'
       tags:
-        - Databases
+      - Databases
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#ListDatabases:
     post:
       operationId: ListDatabases
@@ -126,8 +132,11 @@ paths:
                   NextToken:
                     type: string
       tags:
-        - Databases
+      - Databases
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#CreateTable:
     post:
       operationId: CreateTable
@@ -170,8 +179,8 @@ paths:
                       Value:
                         type: string
               required:
-                - DatabaseName
-                - TableName
+              - DatabaseName
+              - TableName
       responses:
         '200':
           description: Table created successfully.
@@ -194,8 +203,11 @@ paths:
                       RetentionProperties:
                         type: object
       tags:
-        - Tables
+      - Tables
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#DescribeTable:
     post:
       operationId: DescribeTable
@@ -213,8 +225,8 @@ paths:
                 TableName:
                   type: string
               required:
-                - DatabaseName
-                - TableName
+              - DatabaseName
+              - TableName
       responses:
         '200':
           description: Table details.
@@ -239,8 +251,11 @@ paths:
                       MagneticStoreWriteProperties:
                         type: object
       tags:
-        - Tables
+      - Tables
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#WriteRecords:
     post:
       operationId: WriteRecords
@@ -281,21 +296,21 @@ paths:
                     MeasureValueType:
                       type: string
                       enum:
-                        - DOUBLE
-                        - BIGINT
-                        - VARCHAR
-                        - BOOLEAN
-                        - TIMESTAMP
-                        - MULTI
+                      - DOUBLE
+                      - BIGINT
+                      - VARCHAR
+                      - BOOLEAN
+                      - TIMESTAMP
+                      - MULTI
                     Time:
                       type: string
                     TimeUnit:
                       type: string
                       enum:
-                        - MILLISECONDS
-                        - SECONDS
-                        - MICROSECONDS
-                        - NANOSECONDS
+                      - MILLISECONDS
+                      - SECONDS
+                      - MICROSECONDS
+                      - NANOSECONDS
                 Records:
                   type: array
                   description: An array of records containing the unique measure, dimension, time, and version attributes.
@@ -335,9 +350,9 @@ paths:
                       Version:
                         type: integer
               required:
-                - DatabaseName
-                - TableName
-                - Records
+              - DatabaseName
+              - TableName
+              - Records
       responses:
         '200':
           description: Records written successfully.
@@ -356,8 +371,11 @@ paths:
                       MagneticStore:
                         type: integer
       tags:
-        - Write
+      - Write
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#Query:
     post:
       operationId: Query
@@ -380,7 +398,7 @@ paths:
                 MaxRows:
                   type: integer
               required:
-                - QueryString
+              - QueryString
       responses:
         '200':
           description: Query results.
@@ -414,8 +432,11 @@ paths:
                   QueryStatus:
                     type: object
       tags:
-        - Query
+      - Query
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
   schemas:
     Database:
@@ -443,15 +464,15 @@ components:
           format: date-time
           description: The last time that this database was updated.
       required:
-        - Arn
-        - DatabaseName
+      - Arn
+      - DatabaseName
 
 tags:
-  - name: Databases
-    description: Operations for managing Timestream databases.
-  - name: Query
-    description: Operations for querying time series data.
-  - name: Tables
-    description: Operations for managing Timestream tables.
-  - name: Write
-    description: Operations for writing time series data.
+- name: Databases
+  description: Operations for managing Timestream databases.
+- name: Query
+  description: Operations for querying time series data.
+- name: Tables
+  description: Operations for managing Timestream tables.
+- name: Write
+  description: Operations for writing time series data.

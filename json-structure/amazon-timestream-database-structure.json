@@ -1,0 +1,43 @@
+{
+  "name": "Database",
+  "description": "A Timestream database resource containing tables for time series data storage.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "Arn",
+      "type": "string",
+      "description": "The Amazon Resource Name that uniquely identifies this database.",
+      "required": true
+    },
+    {
+      "name": "DatabaseName",
+      "type": "string",
+      "description": "The name of the Timestream database.",
+      "required": true
+    },
+    {
+      "name": "TableCount",
+      "type": "integer",
+      "description": "The total number of tables found within the Timestream database.",
+      "required": false
+    },
+    {
+      "name": "KmsKeyId",
+      "type": "string",
+      "description": "The identifier of the KMS key used to encrypt the data stored in the database.",
+      "required": false
+    },
+    {
+      "name": "CreationTime",
+      "type": "string",
+      "description": "The time when the database was created.",
+      "required": false
+    },
+    {
+      "name": "LastUpdatedTime",
+      "type": "string",
+      "description": "The last time that this database was updated.",
+      "required": false
+    }
+  ]
+}

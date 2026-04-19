@@ -1,0 +1,33 @@
+id: amazon-timestream
+name: Amazon Timestream
+description: Shared capability definition for Amazon Timestream
+namespace: amazon-timestream
+operations:
+- operationId: CreateDatabase
+  method: POST
+  path: /
+  summary: Amazon Timestream Create Database
+- operationId: DescribeDatabase
+  method: POST
+  path: /#DescribeDatabase
+  summary: Amazon Timestream Describe Database
+- operationId: ListDatabases
+  method: POST
+  path: /#ListDatabases
+  summary: Amazon Timestream List Databases
+- operationId: CreateTable
+  method: POST
+  path: /#CreateTable
+  summary: Amazon Timestream Create Table
+- operationId: DescribeTable
+  method: POST
+  path: /#DescribeTable
+  summary: Amazon Timestream Describe Table
+- operationId: WriteRecords
+  method: POST
+  path: /#WriteRecords
+  summary: Amazon Timestream Write Records
+- operationId: Query
+  method: POST
+  path: /#Query
+  summary: Amazon Timestream Query

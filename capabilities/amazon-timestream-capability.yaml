@@ -1,0 +1,7 @@
+id: amazon-timestream-capability
+name: Amazon Timestream Capability
+description: Workflow-oriented capability for Amazon Timestream
+tags:
+- AWS
+consumes:
+- ref: capabilities/shared/amazon-timestream-shared.yaml
