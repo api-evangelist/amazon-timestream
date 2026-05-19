@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Timestream — Query
+  description: 'Amazon Timestream — Query. 1 operations. Lead operation: Amazon Timestream Query. Self-contained Naftiko capability
+    covering one Amazon Timestream business surface.'
+  tags:
+  - Amazon Timestream
+  - Query
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_TIMESTREAM_API_KEY: AMAZON_TIMESTREAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-timestream-query
+    baseUri: https://ingest.timestream.amazonaws.com
+    description: Amazon Timestream — Query business capability. Self-contained, no shared references.
+    resources:
+    - name: '#Query'
+      path: /#Query
+      operations:
+      - name: query
+        method: POST
+        description: Amazon Timestream Query
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: amazon-timestream-query-rest
+    port: 8080
+    description: REST adapter for Amazon Timestream — Query. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/query
+      name: query
+      description: 'REST surface for #Query.'
+      operations:
+      - method: POST
+        name: query
+        description: Amazon Timestream Query
+        call: amazon-timestream-query.query
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-timestream-query-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Timestream — Query. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-timestream-query
+      description: Amazon Timestream Query
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-timestream-query.query
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,119 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Timestream — Tables
+  description: 'Amazon Timestream — Tables. 2 operations. Lead operation: Amazon Timestream Create Table. Self-contained Naftiko
+    capability covering one Amazon Timestream business surface.'
+  tags:
+  - Amazon Timestream
+  - Tables
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_TIMESTREAM_API_KEY: AMAZON_TIMESTREAM_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-timestream-tables
+    baseUri: https://ingest.timestream.amazonaws.com
+    description: Amazon Timestream — Tables business capability. Self-contained, no shared references.
+    resources:
+    - name: '#CreateTable'
+      path: /#CreateTable
+      operations:
+      - name: createtable
+        method: POST
+        description: Amazon Timestream Create Table
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: '#DescribeTable'
+      path: /#DescribeTable
+      operations:
+      - name: describetable
+        method: POST
+        description: Amazon Timestream Describe Table
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: amazon-timestream-tables-rest
+    port: 8080
+    description: REST adapter for Amazon Timestream — Tables. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/createtable
+      name: createtable
+      description: 'REST surface for #CreateTable.'
+      operations:
+      - method: POST
+        name: createtable
+        description: Amazon Timestream Create Table
+        call: amazon-timestream-tables.createtable
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/describetable
+      name: describetable
+      description: 'REST surface for #DescribeTable.'
+      operations:
+      - method: POST
+        name: describetable
+        description: Amazon Timestream Describe Table
+        call: amazon-timestream-tables.describetable
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-timestream-tables-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Timestream — Tables. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: amazon-timestream-create-table
+      description: Amazon Timestream Create Table
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-timestream-tables.createtable
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-timestream-describe-table
+      description: Amazon Timestream Describe Table
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-timestream-tables.describetable
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
