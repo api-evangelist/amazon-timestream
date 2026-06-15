@@ -1,0 +1,644 @@
+{
+  "item": [
+    {
+      "id": "c216f557-4b61-4f9d-a1ea-4f8b6b6680db",
+      "name": "Databases",
+      "description": {
+        "content": "Operations for managing Timestream databases.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0ad739dc-5cb0-4e92-9a8e-2566a93de3a4",
+          "name": "Amazon Timestream Create Database",
+          "request": {
+            "name": "Amazon Timestream Create Database",
+            "description": {
+              "content": "Creates a new Timestream database for storing time series data with configurable encryption settings.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"KmsKeyId\": \"<string>\",\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "e889f16a-73e8-4d28-a746-d2936c0e0916",
+              "name": "Database created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"KmsKeyId\": \"<string>\",\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Database\": {\n    \"Arn\": \"string\",\n    \"DatabaseName\": \"string\",\n    \"TableCount\": 4904,\n    \"KmsKeyId\": \"string\",\n    \"CreationTime\": \"2004-11-07T04:50:53.042Z\",\n    \"LastUpdatedTime\": \"1971-07-12T18:53:08.412Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e0cd925-5134-440c-bbf0-1504c08732a2",
+          "name": "Amazon Timestream Describe Database",
+          "request": {
+            "name": "Amazon Timestream Describe Database",
+            "description": {
+              "content": "Returns information about the database, including the database name, time that the database was last updated, and the total number of tables found within the database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "DescribeDatabase",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "42a50141-da2c-4cb9-8a0d-2bb7e8c2fd1e",
+              "name": "Database details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "DescribeDatabase",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Database\": {\n    \"Arn\": \"string\",\n    \"DatabaseName\": \"string\",\n    \"TableCount\": 4904,\n    \"KmsKeyId\": \"string\",\n    \"CreationTime\": \"2004-11-07T04:50:53.042Z\",\n    \"LastUpdatedTime\": \"1971-07-12T18:53:08.412Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43bebdfa-a189-4e1f-95e9-96c7a1f22681",
+          "name": "Amazon Timestream List Databases",
+          "request": {
+            "name": "Amazon Timestream List Databases",
+            "description": {
+              "content": "Returns a list of your Timestream databases, with pagination support.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "ListDatabases",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "4d65d0df-8fe4-4fa7-9bd6-a137f375d72c",
+              "name": "List of databases.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "ListDatabases",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"NextToken\": \"<string>\",\n  \"MaxResults\": \"<integer>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Databases\": [\n    {\n      \"Arn\": \"string\",\n      \"DatabaseName\": \"string\",\n      \"TableCount\": 2059,\n      \"KmsKeyId\": \"string\",\n      \"CreationTime\": \"2000-03-06T20:55:54.031Z\",\n      \"LastUpdatedTime\": \"1956-09-04T15:44:54.392Z\"\n    },\n    {\n      \"Arn\": \"string\",\n      \"DatabaseName\": \"string\",\n      \"TableCount\": 2923,\n      \"KmsKeyId\": \"string\",\n      \"CreationTime\": \"2023-09-28T23:06:44.087Z\",\n      \"LastUpdatedTime\": \"1979-09-16T01:36:36.203Z\"\n    }\n  ],\n  \"NextToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a96cefed-46be-404c-8233-447ef246984c",
+      "name": "Query",
+      "description": {
+        "content": "Operations for querying time series data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1010e4d1-a2d5-42ab-9e88-3d6030534429",
+          "name": "Amazon Timestream Query",
+          "request": {
+            "name": "Amazon Timestream Query",
+            "description": {
+              "content": "Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "Query",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"QueryString\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxRows\": \"<integer>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "459a6291-0a98-4c91-b7be-cadd17bb7616",
+              "name": "Query results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "Query",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"QueryString\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxRows\": \"<integer>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"QueryId\": \"string\",\n  \"ColumnInfo\": [\n    {\n      \"Name\": \"string\",\n      \"Type\": {}\n    },\n    {\n      \"Name\": \"string\",\n      \"Type\": {}\n    }\n  ],\n  \"NextToken\": \"string\",\n  \"QueryStatus\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "507a290e-9fca-40bc-ad58-5ba63180e683",
+      "name": "Tables",
+      "description": {
+        "content": "Operations for managing Timestream tables.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "407553c1-1924-4262-9e3d-48542d0d79be",
+          "name": "Amazon Timestream Create Table",
+          "request": {
+            "name": "Amazon Timestream Create Table",
+            "description": {
+              "content": "Creates a new table in an existing database with configurable data retention policies for memory store and magnetic store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "CreateTable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"RetentionProperties\": {\n    \"MemoryStoreRetentionPeriodInHours\": \"<integer>\",\n    \"MagneticStoreRetentionPeriodInDays\": \"<integer>\"\n  },\n  \"MagneticStoreWriteProperties\": {\n    \"EnableMagneticStoreWrites\": \"<boolean>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "0ad25868-6de9-447d-a828-a00adf711b99",
+              "name": "Table created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateTable",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"RetentionProperties\": {\n    \"MemoryStoreRetentionPeriodInHours\": \"<integer>\",\n    \"MagneticStoreRetentionPeriodInDays\": \"<integer>\"\n  },\n  \"MagneticStoreWriteProperties\": {\n    \"EnableMagneticStoreWrites\": \"<boolean>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Table\": {\n    \"Arn\": \"string\",\n    \"TableName\": \"string\",\n    \"DatabaseName\": \"string\",\n    \"TableStatus\": \"string\",\n    \"RetentionProperties\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d52b9100-7395-48ff-818c-eb216c0c6da7",
+          "name": "Amazon Timestream Describe Table",
+          "request": {
+            "name": "Amazon Timestream Describe Table",
+            "description": {
+              "content": "Returns information about the table, including the table name, database name, retention duration of the memory store and the magnetic store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "DescribeTable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "94159097-6709-46d3-a773-48dff5a4ff7d",
+              "name": "Table details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "DescribeTable",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Table\": {\n    \"Arn\": \"string\",\n    \"TableName\": \"string\",\n    \"DatabaseName\": \"string\",\n    \"TableStatus\": \"string\",\n    \"RetentionProperties\": {},\n    \"MagneticStoreWriteProperties\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6f574ec1-862a-4be3-a502-7f55a0a1f011",
+      "name": "Write",
+      "description": {
+        "content": "Operations for writing time series data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "36ddeba3-7ddd-4b46-851e-137c40ede661",
+          "name": "Amazon Timestream Write Records",
+          "request": {
+            "name": "Amazon Timestream Write Records",
+            "description": {
+              "content": "Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "WriteRecords",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"Records\": [\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    },\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    }\n  ],\n  \"CommonAttributes\": {\n    \"Dimensions\": [\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      }\n    ],\n    \"MeasureName\": \"<string>\",\n    \"MeasureValue\": \"<string>\",\n    \"MeasureValueType\": \"<string>\",\n    \"Time\": \"<string>\",\n    \"TimeUnit\": \"<string>\"\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "325f7d66-f919-4ea8-9739-708676b23501",
+              "name": "Records written successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "WriteRecords",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"Records\": [\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    },\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    }\n  ],\n  \"CommonAttributes\": {\n    \"Dimensions\": [\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      }\n    ],\n    \"MeasureName\": \"<string>\",\n    \"MeasureValue\": \"<string>\",\n    \"MeasureValueType\": \"<string>\",\n    \"Time\": \"<string>\",\n    \"TimeUnit\": \"<string>\"\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RecordsIngested\": {\n    \"Total\": 4918,\n    \"MemoryStore\": 7897,\n    \"MagneticStore\": 6795\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ingest.timestream.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fc699214-0daf-4321-b087-9ebb6f24ec66",
+    "name": "Amazon Timestream",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}
