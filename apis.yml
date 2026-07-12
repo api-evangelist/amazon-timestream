@@ -35,6 +35,12 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/timestream/faqs/
 common:
+  - type: TrustCenter
+    url: security/amazon-timestream-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-timestream-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-timestream-domain-security.yml
   - type: Portal
     url: https://aws.amazon.com/
   - type: Website
