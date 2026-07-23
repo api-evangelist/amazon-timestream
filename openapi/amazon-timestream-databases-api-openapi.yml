@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  title: Amazon Timestream Databases API
+  description: Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.
+  version: '2018-11-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/timestream/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://ingest.timestream.amazonaws.com
+  description: Amazon Timestream Write API endpoint
+tags:
+- name: Databases
+  description: Operations for managing Timestream databases.
+paths:
+  /:
+    post:
+      operationId: CreateDatabase
+      summary: Amazon Timestream Create Database
+      description: Creates a new Timestream database for storing time series data with configurable encryption settings.
+      headers:
+        X-Amz-Target:
+          description: The target API operation.
+          schema:
+            type: string
+            enum:
+            - Timestream_20181101.CreateDatabase
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+                KmsKeyId:
+                  type: string
+                  description: The KMS key for the database.
+                Tags:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      Key:
+                        type: string
+                      Value:
+                        type: string
+              required:
+              - DatabaseName
+      responses:
+        '200':
+          description: Database created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Database:
+                    $ref: '#/components/schemas/Database'
+      tags:
+      - Databases
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /#DescribeDatabase:
+    post:
+      operationId: DescribeDatabase
+      summary: Amazon Timestream Describe Database
+      description: Returns information about the database, including the database name, time that the database was last updated, and the total number of tables found within the database.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+              required:
+              - DatabaseName
+      responses:
+        '200':
+          description: Database details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Database:
+                    $ref: '#/components/schemas/Database'
+      tags:
+      - Databases
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /#ListDatabases:
+    post:
+      operationId: ListDatabases
+      summary: Amazon Timestream List Databases
+      description: Returns a list of your Timestream databases, with pagination support.
+      requestBody:
+        required: false
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                NextToken:
+                  type: string
+                MaxResults:
+                  type: integer
+                  minimum: 1
+                  maximum: 20
+      responses:
+        '200':
+          description: List of databases.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Databases:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Database'
+                  NextToken:
+                    type: string
+      tags:
+      - Databases
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    Database:
+      type: object
+      description: A Timestream database resource containing tables for time series data storage.
+      properties:
+        Arn:
+          type: string
+          description: The Amazon Resource Name that uniquely identifies this database.
+        DatabaseName:
+          type: string
+          description: The name of the Timestream database.
+        TableCount:
+          type: integer
+          description: The total number of tables found within the Timestream database.
+        KmsKeyId:
+          type: string
+          description: The identifier of the KMS key used to encrypt the data stored in the database.
+        CreationTime:
+          type: string
+          format: date-time
+          description: The time when the database was created.
+        LastUpdatedTime:
+          type: string
+          format: date-time
+          description: The last time that this database was updated.
+      required:
+      - Arn
+      - DatabaseName

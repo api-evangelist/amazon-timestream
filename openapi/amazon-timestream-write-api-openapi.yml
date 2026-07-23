@@ -1,0 +1,138 @@
+openapi: 3.0.0
+info:
+  title: Amazon Timestream Databases Write API
+  description: Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.
+  version: '2018-11-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/timestream/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://ingest.timestream.amazonaws.com
+  description: Amazon Timestream Write API endpoint
+tags:
+- name: Write
+  description: Operations for writing time series data.
+paths:
+  /#WriteRecords:
+    post:
+      operationId: WriteRecords
+      summary: Amazon Timestream Write Records
+      description: Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                DatabaseName:
+                  type: string
+                  description: The name of the Timestream database.
+                TableName:
+                  type: string
+                  description: The name of the Timestream table.
+                CommonAttributes:
+                  type: object
+                  description: A record containing the common measure, dimension, and time information.
+                  properties:
+                    Dimensions:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Name:
+                            type: string
+                          Value:
+                            type: string
+                          DimensionValueType:
+                            type: string
+                    MeasureName:
+                      type: string
+                    MeasureValue:
+                      type: string
+                    MeasureValueType:
+                      type: string
+                      enum:
+                      - DOUBLE
+                      - BIGINT
+                      - VARCHAR
+                      - BOOLEAN
+                      - TIMESTAMP
+                      - MULTI
+                    Time:
+                      type: string
+                    TimeUnit:
+                      type: string
+                      enum:
+                      - MILLISECONDS
+                      - SECONDS
+                      - MICROSECONDS
+                      - NANOSECONDS
+                Records:
+                  type: array
+                  description: An array of records containing the unique measure, dimension, time, and version attributes.
+                  items:
+                    type: object
+                    properties:
+                      Dimensions:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            Name:
+                              type: string
+                            Value:
+                              type: string
+                      MeasureName:
+                        type: string
+                      MeasureValue:
+                        type: string
+                      MeasureValueType:
+                        type: string
+                      MeasureValues:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            Name:
+                              type: string
+                            Value:
+                              type: string
+                            Type:
+                              type: string
+                      Time:
+                        type: string
+                      TimeUnit:
+                        type: string
+                      Version:
+                        type: integer
+              required:
+              - DatabaseName
+              - TableName
+              - Records
+      responses:
+        '200':
+          description: Records written successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  RecordsIngested:
+                    type: object
+                    properties:
+                      Total:
+                        type: integer
+                      MemoryStore:
+                        type: integer
+                      MagneticStore:
+                        type: integer
+      tags:
+      - Write
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK

@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  title: Amazon Timestream Databases Query API
+  description: Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.
+  version: '2018-11-01'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/timestream/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://ingest.timestream.amazonaws.com
+  description: Amazon Timestream Write API endpoint
+tags:
+- name: Query
+  description: Operations for querying time series data.
+paths:
+  /#Query:
+    post:
+      operationId: Query
+      summary: Amazon Timestream Query
+      description: Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.0:
+            schema:
+              type: object
+              properties:
+                QueryString:
+                  type: string
+                  description: The SQL query string to execute.
+                ClientToken:
+                  type: string
+                NextToken:
+                  type: string
+                MaxRows:
+                  type: integer
+              required:
+              - QueryString
+      responses:
+        '200':
+          description: Query results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  QueryId:
+                    type: string
+                  Rows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Data:
+                          type: array
+                          items:
+                            type: object
+                  ColumnInfo:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        Name:
+                          type: string
+                        Type:
+                          type: object
+                  NextToken:
+                    type: string
+                  QueryStatus:
+                    type: object
+      tags:
+      - Query
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
