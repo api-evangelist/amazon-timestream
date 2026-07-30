@@ -3,38 +3,98 @@ description: >-
   Amazon Timestream is a fast, scalable, and serverless time series database service designed for IoT and operational
   applications. It makes it easy to store and analyze trillions of events per day at a fraction of the cost of
   relational databases, with built-in time series analytics functions and automatic data lifecycle management.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/timestream/
 created: '2024-01-15'
 modified: '2026-05-19'
 apis:
-  - name: Amazon Timestream API
-    description: >-
-      The Amazon Timestream API provides programmatic access to manage serverless time series databases. It enables
-      developers to create and manage databases and tables, write time series data records, execute queries with
-      built-in time series analytics functions, and configure data retention policies for automatic lifecycle
-      management.
-    image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-    humanURL: https://aws.amazon.com/timestream/
-    baseURL: https://ingest.timestream.amazonaws.com
-    tags:
-      - AWS
-      - Database
-      - IoT
-      - Time Series
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/timestream/
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/openapi/amazon-timestream-openapi.yml
-      - type: Pricing
-        url: https://aws.amazon.com/timestream/pricing/
-      - type: GettingStarted
-        url: https://aws.amazon.com/timestream/getting-started/
-      - type: FAQ
-        url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-databases-api
+  name: Amazon Timestream Databases API
+  description: Operations for managing Timestream databases.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-databases-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-query-api
+  name: Amazon Timestream Query API
+  description: Operations for querying time series data.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Query
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-query-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-tables-api
+  name: Amazon Timestream Tables API
+  description: Operations for managing Timestream tables.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Tables
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-tables-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-write-api
+  name: Amazon Timestream Write API
+  description: Operations for writing time series data.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Write
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-write-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-timestream/overview
   - type: AgenticAccess
     url: agentic-access/amazon-timestream-agentic-access.yml
   - type: TrustCenter
