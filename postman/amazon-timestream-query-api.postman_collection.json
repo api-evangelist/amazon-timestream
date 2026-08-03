@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "118aec2b-c8c7-4adc-8400-54921fc5605f",
+    "name": "Amazon Timestream Databases Query API",
+    "description": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:41.000Z",
+    "updatedAt": "2026-07-28T00:56:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-118aec2b-c8c7-4adc-8400-54921fc5605f"
+  },
+  "item": [
+    {
+      "name": "#Query",
+      "item": [
+        {
+          "name": "Amazon Timestream Query",
+          "id": "ae11df8c-3484-4756-b422-a498ef6a946e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"QueryString\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxRows\": \"<integer>\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#Query",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "Query"
+            },
+            "description": "Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables."
+          },
+          "response": [
+            {
+              "id": "7b2b21a1-e8de-413f-802f-87899040ca11",
+              "name": "Query results.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"QueryString\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxRows\": \"<integer>\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#Query",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "Query"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"QueryId\": \"<string>\",\n  \"ColumnInfo\": [\n    {\n      \"Name\": \"<string>\",\n      \"Type\": {}\n    },\n    {\n      \"Name\": \"<string>\",\n      \"Type\": {}\n    }\n  ],\n  \"NextToken\": \"<string>\",\n  \"QueryStatus\": {}\n}",
+              "createdAt": "2026-07-28T00:56:42.000Z",
+              "updatedAt": "2026-07-28T00:56:42.000Z",
+              "uid": "35240-7b2b21a1-e8de-413f-802f-87899040ca11"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:42.000Z",
+          "updatedAt": "2026-07-28T00:56:42.000Z",
+          "uid": "35240-ae11df8c-3484-4756-b422-a498ef6a946e"
+        }
+      ],
+      "id": "ed3c9426-11b9-4003-b445-c214326baebb",
+      "createdAt": "2026-07-28T00:56:42.000Z",
+      "updatedAt": "2026-07-28T00:56:42.000Z",
+      "uid": "35240-ed3c9426-11b9-4003-b445-c214326baebb"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ingest.timestream.amazonaws.com"
+    }
+  ]
+}

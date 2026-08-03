@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "eafd6682-282b-4241-855e-c97dccb8ca63",
+    "name": "Amazon Timestream Databases Write API",
+    "description": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:43.000Z",
+    "updatedAt": "2026-07-28T00:56:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-eafd6682-282b-4241-855e-c97dccb8ca63"
+  },
+  "item": [
+    {
+      "name": "#WriteRecords",
+      "item": [
+        {
+          "name": "Amazon Timestream Write Records",
+          "id": "8898b22b-2b0b-4899-995f-ad26540983f5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"Records\": [\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    },\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    }\n  ],\n  \"CommonAttributes\": {\n    \"Dimensions\": [\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      }\n    ],\n    \"MeasureName\": \"<string>\",\n    \"MeasureValue\": \"<string>\",\n    \"MeasureValueType\": \"MULTI\",\n    \"Time\": \"<string>\",\n    \"TimeUnit\": \"MILLISECONDS\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#WriteRecords",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "WriteRecords"
+            },
+            "description": "Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput."
+          },
+          "response": [
+            {
+              "id": "c306eadd-2138-4fbf-9d21-099a72363d64",
+              "name": "Records written successfully.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"Records\": [\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    },\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    }\n  ],\n  \"CommonAttributes\": {\n    \"Dimensions\": [\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      }\n    ],\n    \"MeasureName\": \"<string>\",\n    \"MeasureValue\": \"<string>\",\n    \"MeasureValueType\": \"MULTI\",\n    \"Time\": \"<string>\",\n    \"TimeUnit\": \"MILLISECONDS\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#WriteRecords",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "WriteRecords"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"RecordsIngested\": {\n    \"Total\": \"<integer>\",\n    \"MemoryStore\": \"<integer>\",\n    \"MagneticStore\": \"<integer>\"\n  }\n}",
+              "createdAt": "2026-07-28T00:56:44.000Z",
+              "updatedAt": "2026-07-28T00:56:44.000Z",
+              "uid": "35240-c306eadd-2138-4fbf-9d21-099a72363d64"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:44.000Z",
+          "updatedAt": "2026-07-28T00:56:44.000Z",
+          "uid": "35240-8898b22b-2b0b-4899-995f-ad26540983f5"
+        }
+      ],
+      "id": "17c61759-f98a-4d1b-a72a-fc60ab100122",
+      "createdAt": "2026-07-28T00:56:44.000Z",
+      "updatedAt": "2026-07-28T00:56:44.000Z",
+      "uid": "35240-17c61759-f98a-4d1b-a72a-fc60ab100122"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ingest.timestream.amazonaws.com"
+    }
+  ]
+}

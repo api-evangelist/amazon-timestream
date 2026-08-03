@@ -1,0 +1,210 @@
+{
+  "info": {
+    "_postman_id": "bd3dd7ea-cefd-46e7-ae1e-a6876a0412b5",
+    "name": "Amazon Timestream Databases Tables API",
+    "description": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:42.000Z",
+    "updatedAt": "2026-07-28T00:56:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bd3dd7ea-cefd-46e7-ae1e-a6876a0412b5"
+  },
+  "item": [
+    {
+      "name": "#CreateTable",
+      "item": [
+        {
+          "name": "Amazon Timestream Create Table",
+          "id": "0319c79d-3cdc-48eb-b4c7-c97d1db20a22",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"RetentionProperties\": {\n    \"MemoryStoreRetentionPeriodInHours\": \"<integer>\",\n    \"MagneticStoreRetentionPeriodInDays\": \"<integer>\"\n  },\n  \"MagneticStoreWriteProperties\": {\n    \"EnableMagneticStoreWrites\": \"<boolean>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#CreateTable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "CreateTable"
+            },
+            "description": "Creates a new table in an existing database with configurable data retention policies for memory store and magnetic store."
+          },
+          "response": [
+            {
+              "id": "0380f2a0-a6e0-42ad-a96b-3f03136ecb48",
+              "name": "Table created successfully.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"RetentionProperties\": {\n    \"MemoryStoreRetentionPeriodInHours\": \"<integer>\",\n    \"MagneticStoreRetentionPeriodInDays\": \"<integer>\"\n  },\n  \"MagneticStoreWriteProperties\": {\n    \"EnableMagneticStoreWrites\": \"<boolean>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#CreateTable",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateTable"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Table\": {\n    \"Arn\": \"<string>\",\n    \"TableName\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"TableStatus\": \"<string>\",\n    \"RetentionProperties\": {}\n  }\n}",
+              "createdAt": "2026-07-28T00:56:43.000Z",
+              "updatedAt": "2026-07-28T00:56:43.000Z",
+              "uid": "35240-0380f2a0-a6e0-42ad-a96b-3f03136ecb48"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:43.000Z",
+          "updatedAt": "2026-07-28T00:56:43.000Z",
+          "uid": "35240-0319c79d-3cdc-48eb-b4c7-c97d1db20a22"
+        }
+      ],
+      "id": "4b96016c-5940-4880-87af-95725c33b55d",
+      "createdAt": "2026-07-28T00:56:43.000Z",
+      "updatedAt": "2026-07-28T00:56:43.000Z",
+      "uid": "35240-4b96016c-5940-4880-87af-95725c33b55d"
+    },
+    {
+      "name": "#DescribeTable",
+      "item": [
+        {
+          "name": "Amazon Timestream Describe Table",
+          "id": "1ec764fa-34a1-476b-a12d-88813796cb25",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#DescribeTable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "DescribeTable"
+            },
+            "description": "Returns information about the table, including the table name, database name, retention duration of the memory store and the magnetic store."
+          },
+          "response": [
+            {
+              "id": "a4ee0f5e-94e9-410b-966a-38b3b24e8e91",
+              "name": "Table details.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.0"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\"\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#DescribeTable",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "DescribeTable"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"Table\": {\n    \"Arn\": \"<string>\",\n    \"TableName\": \"<string>\",\n    \"DatabaseName\": \"<string>\",\n    \"TableStatus\": \"<string>\",\n    \"RetentionProperties\": {},\n    \"MagneticStoreWriteProperties\": {}\n  }\n}",
+              "createdAt": "2026-07-28T00:56:43.000Z",
+              "updatedAt": "2026-07-28T00:56:43.000Z",
+              "uid": "35240-a4ee0f5e-94e9-410b-966a-38b3b24e8e91"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:43.000Z",
+          "updatedAt": "2026-07-28T00:56:43.000Z",
+          "uid": "35240-1ec764fa-34a1-476b-a12d-88813796cb25"
+        }
+      ],
+      "id": "520bcd2f-09f5-4d1e-b206-5ea0dd146325",
+      "createdAt": "2026-07-28T00:56:43.000Z",
+      "updatedAt": "2026-07-28T00:56:43.000Z",
+      "uid": "35240-520bcd2f-09f5-4d1e-b206-5ea0dd146325"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://ingest.timestream.amazonaws.com"
+    }
+  ]
+}

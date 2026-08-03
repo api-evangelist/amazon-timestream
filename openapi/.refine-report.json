@@ -1,0 +1,20 @@
+{
+  "provider": "amazon-timestream",
+  "sources": [
+    "amazon-timestream-databases-api-openapi.yml",
+    "amazon-timestream-query-api-openapi.yml",
+    "amazon-timestream-tables-api-openapi.yml",
+    "amazon-timestream-write-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-timestream-databases-api-openapi.yml",
+    "amazon-timestream-query-api-openapi.yml",
+    "amazon-timestream-tables-api-openapi.yml",
+    "amazon-timestream-write-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
