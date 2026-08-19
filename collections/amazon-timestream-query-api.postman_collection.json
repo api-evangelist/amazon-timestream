@@ -1,0 +1,115 @@
+{
+  "item": [
+    {
+      "id": "4ff8f724-3a74-4069-9358-4d7d60123e26",
+      "name": "Query",
+      "description": {
+        "content": "Operations for querying time series data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35d08ec5-5f7b-423e-8ea4-3b099c09c9b2",
+          "name": "Amazon Timestream Query",
+          "request": {
+            "name": "Amazon Timestream Query",
+            "description": {
+              "content": "Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "Query",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"QueryString\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxRows\": \"<integer>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "5a679f73-7663-46d7-9045-0b32bc43c526",
+              "name": "Query results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "Query",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"QueryString\": \"<string>\",\n  \"ClientToken\": \"<string>\",\n  \"NextToken\": \"<string>\",\n  \"MaxRows\": \"<integer>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"QueryId\": \"string\",\n  \"ColumnInfo\": [\n    {\n      \"Name\": \"string\",\n      \"Type\": {}\n    },\n    {\n      \"Name\": \"string\",\n      \"Type\": {}\n    }\n  ],\n  \"NextToken\": \"string\",\n  \"QueryStatus\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ingest.timestream.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3db489d9-84b0-4d13-99b7-033952a433af",
+    "name": "Amazon Timestream Databases Query API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

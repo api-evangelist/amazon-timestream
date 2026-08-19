@@ -1,0 +1,63 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Timestream Databases API",
+    "version": "2018-11-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Databases",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Timestream Create Database",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new Timestream database for storing time series data with configurable encryption settings."
+        },
+        {
+          "info": {
+            "name": "Amazon Timestream Describe Database",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/#DescribeDatabase",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns information about the database, including the database name, time that the database was last updated, and the total number of tables found within the database."
+        },
+        {
+          "info": {
+            "name": "Amazon Timestream List Databases",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/#ListDatabases",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a list of your Timestream databases, with pagination support."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

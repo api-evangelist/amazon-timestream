@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Timestream Databases Write API",
+    "version": "2018-11-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Write",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Timestream Write Records",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/#WriteRecords",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

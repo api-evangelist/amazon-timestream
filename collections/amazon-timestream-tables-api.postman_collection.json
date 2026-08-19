@@ -1,0 +1,198 @@
+{
+  "item": [
+    {
+      "id": "331c4efd-6f44-474b-a79e-6cbbe2ef396a",
+      "name": "Tables",
+      "description": {
+        "content": "Operations for managing Timestream tables.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e446ef2-16ad-43be-ac31-6a74732baa87",
+          "name": "Amazon Timestream Create Table",
+          "request": {
+            "name": "Amazon Timestream Create Table",
+            "description": {
+              "content": "Creates a new table in an existing database with configurable data retention policies for memory store and magnetic store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "CreateTable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"RetentionProperties\": {\n    \"MemoryStoreRetentionPeriodInHours\": \"<integer>\",\n    \"MagneticStoreRetentionPeriodInDays\": \"<integer>\"\n  },\n  \"MagneticStoreWriteProperties\": {\n    \"EnableMagneticStoreWrites\": \"<boolean>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "68582d01-ec2e-49fd-8da9-15b01bb10881",
+              "name": "Table created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "CreateTable",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"RetentionProperties\": {\n    \"MemoryStoreRetentionPeriodInHours\": \"<integer>\",\n    \"MagneticStoreRetentionPeriodInDays\": \"<integer>\"\n  },\n  \"MagneticStoreWriteProperties\": {\n    \"EnableMagneticStoreWrites\": \"<boolean>\"\n  },\n  \"Tags\": [\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"<string>\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Table\": {\n    \"Arn\": \"string\",\n    \"TableName\": \"string\",\n    \"DatabaseName\": \"string\",\n    \"TableStatus\": \"string\",\n    \"RetentionProperties\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d4ef305-0692-4834-be72-3edd8b8a2d6c",
+          "name": "Amazon Timestream Describe Table",
+          "request": {
+            "name": "Amazon Timestream Describe Table",
+            "description": {
+              "content": "Returns information about the table, including the table name, database name, retention duration of the memory store and the magnetic store.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "DescribeTable",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "f35ffe88-4872-4ff9-8abb-a4e165c05f8c",
+              "name": "Table details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "DescribeTable",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"Table\": {\n    \"Arn\": \"string\",\n    \"TableName\": \"string\",\n    \"DatabaseName\": \"string\",\n    \"TableStatus\": \"string\",\n    \"RetentionProperties\": {},\n    \"MagneticStoreWriteProperties\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ingest.timestream.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4d5a8493-77c9-44b6-bafa-14d064cbb2fc",
+    "name": "Amazon Timestream Databases Tables API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

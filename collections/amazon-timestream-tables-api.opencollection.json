@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Timestream Databases Tables API",
+    "version": "2018-11-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Timestream Create Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/#CreateTable",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new table in an existing database with configurable data retention policies for memory store and magnetic store."
+        },
+        {
+          "info": {
+            "name": "Amazon Timestream Describe Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/#DescribeTable",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns information about the table, including the table name, database name, retention duration of the memory store and the magnetic store."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

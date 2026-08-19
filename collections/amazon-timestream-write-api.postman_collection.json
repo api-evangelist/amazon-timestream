@@ -1,0 +1,115 @@
+{
+  "item": [
+    {
+      "id": "2ef3d7ba-2abd-4ddc-9593-e7c0ee95e4d9",
+      "name": "Write",
+      "description": {
+        "content": "Operations for writing time series data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7bc53c40-ea3c-46e9-8e57-41e91578f010",
+          "name": "Amazon Timestream Write Records",
+          "request": {
+            "name": "Amazon Timestream Write Records",
+            "description": {
+              "content": "Enables you to write your time series data into Timestream, writing records individually or in batches for optimal throughput.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "WriteRecords",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.0"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"Records\": [\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    },\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    }\n  ],\n  \"CommonAttributes\": {\n    \"Dimensions\": [\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      }\n    ],\n    \"MeasureName\": \"<string>\",\n    \"MeasureValue\": \"<string>\",\n    \"MeasureValueType\": \"<string>\",\n    \"Time\": \"<string>\",\n    \"TimeUnit\": \"<string>\"\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "e15d5bc0-696c-4133-9d55-e0b3fd539c5b",
+              "name": "Records written successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "WriteRecords",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DatabaseName\": \"<string>\",\n  \"TableName\": \"<string>\",\n  \"Records\": [\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    },\n    {\n      \"Dimensions\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\"\n        }\n      ],\n      \"MeasureName\": \"<string>\",\n      \"MeasureValue\": \"<string>\",\n      \"MeasureValueType\": \"<string>\",\n      \"MeasureValues\": [\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        },\n        {\n          \"Name\": \"<string>\",\n          \"Value\": \"<string>\",\n          \"Type\": \"<string>\"\n        }\n      ],\n      \"Time\": \"<string>\",\n      \"TimeUnit\": \"<string>\",\n      \"Version\": \"<integer>\"\n    }\n  ],\n  \"CommonAttributes\": {\n    \"Dimensions\": [\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      },\n      {\n        \"Name\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"DimensionValueType\": \"<string>\"\n      }\n    ],\n    \"MeasureName\": \"<string>\",\n    \"MeasureValue\": \"<string>\",\n    \"MeasureValueType\": \"<string>\",\n    \"Time\": \"<string>\",\n    \"TimeUnit\": \"<string>\"\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"RecordsIngested\": {\n    \"Total\": 5400,\n    \"MemoryStore\": 2875,\n    \"MagneticStore\": 3915\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://ingest.timestream.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4895c2f2-89c3-41f1-b735-389d3e1a3b39",
+    "name": "Amazon Timestream Databases Write API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications, enabling storage and analysis of trillions of events per day.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

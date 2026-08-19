@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Timestream Databases Query API",
+    "version": "2018-11-01"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Query",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Timestream Query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://ingest.timestream.amazonaws.com/#Query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Executes a Timestream query using a SQL-like syntax to retrieve time series data from your databases and tables."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
