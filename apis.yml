@@ -80,7 +80,8 @@ apis:
   description: Operations for writing time series data.
   humanURL: https://aws.amazon.com/timestream/
   baseURL: https://ingest.timestream.amazonaws.com
-  tags:
+  tags: []
+  tags_raw:
   - Write
   properties:
   - type: OpenAPI
@@ -160,6 +161,11 @@ maintainers:
     email: kin@apievangelist.com
     url: https://apievangelist.com
 tags:
+  - AWS
+  - Database
+  - IoT
+  - Time Series
+tags_raw:
   - AWS
   - Database
   - Iot
