@@ -182,3 +182,5 @@ tags_raw:
   - Database
   - Iot
   - Time Series
+x-parent: aws
+x-relationship: product
