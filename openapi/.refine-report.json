@@ -1,10 +1,7 @@
 {
   "provider": "amazon-timestream",
   "sources": [
-    "amazon-timestream-databases-api-openapi.yml",
-    "amazon-timestream-query-api-openapi.yml",
-    "amazon-timestream-tables-api-openapi.yml",
-    "amazon-timestream-write-api-openapi.yml"
+    "_original/amazon-timestream-openapi.yml"
   ],
   "outputs": [
     "amazon-timestream-databases-api-openapi.yml",
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "amazon-timestream-databases-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "amazon-timestream-query-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "amazon-timestream-tables-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
-    "amazon-timestream-write-api-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-timestream-openapi.yml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-timestream-databases-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-timestream-query-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-timestream-tables-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-timestream-write-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
