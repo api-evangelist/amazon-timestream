@@ -1,4 +1,4 @@
-# Amazon Timestream (amazon-timestream)
+# Amazon Timestream
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,172 @@
 
 Amazon Timestream is a fast, scalable, and serverless time series database service designed for IoT and operational applications. It makes it easy to store and analyze trillions of events per day at a fraction of the cost of relational databases, with built-in time series analytics functions and automatic data lifecycle management.
 
-**APIs.json:** [https://aws.amazon.com/timestream/](https://aws.amazon.com/timestream/)
+**Areas:** AWS · Database · IoT · Time Series
 
-## Tags
+## Amazon Timestream on APIs.io
 
-- AWS
-- Database
-- Iot
-- Time Series
+Everything profiled for Amazon Timestream is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-timestream/](https://apis.io/providers/amazon-timestream/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (7)
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+- [Amazon Timestream Databases API](https://apis.io/apis/amazon-timestream/amazon-timestream-databases-api/) — Operations for managing Timestream databases.
+- [Amazon Timestream Query API](https://apis.io/apis/amazon-timestream/amazon-timestream-query-api/) — Operations for querying time series data.
+- [Amazon Timestream Tables API](https://apis.io/apis/amazon-timestream/amazon-timestream-tables-api/) — Operations for managing Timestream tables.
+- [Amazon Timestream Write API](https://apis.io/apis/amazon-timestream/amazon-timestream-write-api/) — Operations for writing time series data.
+- [Amazon Timestream Timestream Batch Load Task API](https://apis.io/apis/amazon-timestream/amazon-timestream-batch-load-task-api/) — The Timestream Batch Load Task API from Amazon Timestream — 3 operation(s) for timestream batch load task.
+- [Amazon Timestream Timestream Operations API](https://apis.io/apis/amazon-timestream/amazon-timestream-operations-api/) — The Timestream Operations API from Amazon Timestream — 8 operation(s) for timestream operations.
+- [Amazon Timestream Timestream Scheduled Query API](https://apis.io/apis/amazon-timestream/amazon-timestream-scheduled-query-api/) — The Timestream Scheduled Query API from Amazon Timestream — 6 operation(s) for timestream scheduled query.
 
-## APIs
+### Published properties
 
-### Amazon Timestream API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Amazon Timestream API provides programmatic access to manage serverless time series databases. It enables developers to create and manage databases and tables, write time series data records, execute queries with built-in time series analytics functions, and configure data retention policies for automatic lifecycle management.
+#### Agentic access (1)
 
-- **Human URL:** [https://aws.amazon.com/timestream/](https://aws.amazon.com/timestream/)
-- **Base URL:** `https://ingest.timestream.amazonaws.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Amazon Timestream Agentic Access](https://apis.io/agentic-access/amazon-timestream/amazon-timestream-agentic-access/)
 
-- AWS
-- Database
-- IoT
-- Time Series
+#### JSON Schema (1)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/timestream/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/openapi/amazon-timestream-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Pricing](https://aws.amazon.com/timestream/pricing/)
-- [Getting Started](https://aws.amazon.com/timestream/getting-started/)
-- [F A Q](https://aws.amazon.com/timestream/faqs/)
-- [Postman Collection](collections/amazon-timestream.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amazon-timestream.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Database](https://apis.io/schemas/amazon-timestream/amazon-timestream-database/)
 
-## Common Properties
+#### JSON Structure (1)
 
-- [Portal](https://aws.amazon.com/)
+Data models expressed in JSON Structure.
+
+- [Amazon Timestream Database Structure](https://apis.io/json-structure/amazon-timestream/amazon-timestream-database-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Timestream Context](https://apis.io/jsonld/amazon-timestream/amazon-timestream-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Timestream Vocabulary](https://apis.io/vocabularies/amazon-timestream/amazon-timestream-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Amazon Timestream Example](https://apis.io/examples/amazon-timestream/amazon-timestream-example/)
+
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Amazon Timestream](https://apis.io/collections/amazon-timestream/open-amazon-timestream/)
+- [Amazon Timestream Databases API](https://apis.io/collections/amazon-timestream/open-amazon-timestream-databases-api/)
+- [Amazon Timestream Databases Query API](https://apis.io/collections/amazon-timestream/open-amazon-timestream-query-api/)
+- [Amazon Timestream Databases Tables API](https://apis.io/collections/amazon-timestream/open-amazon-timestream-tables-api/)
+- [Amazon Timestream Databases Write API](https://apis.io/collections/amazon-timestream/open-amazon-timestream-write-api/)
+- [Amazon Timestream Databases API](https://apis.io/collections/amazon-timestream/postman-amazon-timestream-databases-api/)
+- [Amazon Timestream Databases Query API](https://apis.io/collections/amazon-timestream/postman-amazon-timestream-query-api/)
+- [Amazon Timestream Databases Tables API](https://apis.io/collections/amazon-timestream/postman-amazon-timestream-tables-api/)
+- [Amazon Timestream Databases Write API](https://apis.io/collections/amazon-timestream/postman-amazon-timestream-write-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Timestream — jsonschema rules](https://apis.io/rules/amazon-timestream/amazon-timestream-jsonschema-spectral-rules/)
+- [Amazon Timestream API Rules](https://apis.io/rules/amazon-timestream/amazon-timestream-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Timestream Domain Security](https://apis.io/security/amazon-timestream/amazon-timestream-domain-security/)
+- [Amazon Timestream Trust Center](https://apis.io/security/amazon-timestream/amazon-timestream-trust-center/)
+- [Amazon Timestream Vulnerability Disclosure](https://apis.io/security/amazon-timestream/amazon-timestream-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Timestream Plans Pricing](https://apis.io/plans/amazon-timestream/amazon-timestream-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Timestream Rate Limits](https://apis.io/rate-limits/amazon-timestream/amazon-timestream-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Timestream Finops](https://apis.io/finops/amazon-timestream/amazon-timestream-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/timestream/)
 - [Documentation](https://docs.aws.amazon.com/timestream/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/timestream/)
-- [Sign Up](https://signin.aws.amazon.com/signup?request_type=register)
-- [Login](https://aws.amazon.com/console/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [Spectral Rules](https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/rules/amazon-timestream-spectral-rules.yml)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/vocabulary/amazon-timestream-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](https://aws.amazon.com/partners/)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 46.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 43.8 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 44.0 |
+| Access clarity | 53.9 |
+
+**Agent readiness 17.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-timestream/](https://apis.io/providers/amazon-timestream/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Timestream: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-timestream/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
