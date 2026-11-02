@@ -122,7 +122,7 @@ rate_limit_statements:
   a Region.
 - AWS customers receive 100GB of data transfer out to the internet free each month
 x-canonical:
-  generated: '2026-11-01'
+  generated: '2026-11-02'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
