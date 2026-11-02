@@ -1,0 +1,229 @@
+name: Amazon Timestream
+description: >-
+  Amazon Timestream is a fast, scalable, and serverless time series database service designed for IoT and operational
+  applications. It makes it easy to store and analyze trillions of events per day at a fraction of the cost of
+  relational databases, with built-in time series analytics functions and automatic data lifecycle management.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+specificationVersion: '0.23'
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+url: https://aws.amazon.com/timestream/
+created: '2024-01-15'
+modified: '2026-05-19'
+apis:
+- aid: amazon-timestream:amazon-timestream-databases-api
+  name: Amazon Timestream Databases API
+  description: Operations for managing Timestream databases.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Database
+  tags_raw:
+  - Databases
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-databases-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-query-api
+  name: Amazon Timestream Query API
+  description: Operations for querying time series data.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Query
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-query-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-tables-api
+  name: Amazon Timestream Tables API
+  description: Operations for managing Timestream tables.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Tables
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-tables-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-write-api
+  name: Amazon Timestream Write API
+  description: Operations for writing time series data.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags: []
+  tags_raw:
+  - Write
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-write-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: Pricing
+    url: https://aws.amazon.com/timestream/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/timestream/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/timestream/faqs/
+- aid: amazon-timestream:amazon-timestream-batch-load-task-api
+  name: Amazon Timestream Timestream Batch Load Task API
+  description: >-
+    The Timestream Batch Load Task API from Amazon Timestream — 3 operation(s) for timestream batch load
+    task.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Batch Load Task
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-batch-load-task-api-openapi.yml
+- aid: amazon-timestream:amazon-timestream-operations-api
+  name: Amazon Timestream Timestream Operations API
+  description: >-
+    The Timestream Operations API from Amazon Timestream — 8 operation(s) for timestream operations.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-operations-api-openapi.yml
+- aid: amazon-timestream:amazon-timestream-scheduled-query-api
+  name: Amazon Timestream Timestream Scheduled Query API
+  description: >-
+    The Timestream Scheduled Query API from Amazon Timestream — 6 operation(s) for timestream scheduled
+    query.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Scheduled Query
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-scheduled-query-api-openapi.yml
+common:
+  - type: Plans
+    url: plans/amazon-timestream-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/amazon-timestream-rate-limits.yml
+  - type: FinOps
+    url: finops/amazon-timestream-finops.yml
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-timestream/overview
+  - type: AgenticAccess
+    url: agentic-access/amazon-timestream-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-timestream-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-timestream-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-timestream-domain-security.yml
+  - type: Portal
+    url: https://aws.amazon.com/
+  - type: Website
+    url: https://aws.amazon.com/timestream/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/timestream/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: Console
+    url: https://console.aws.amazon.com/timestream/
+  - type: Signup
+    url: https://signin.aws.amazon.com/signup?request_type=register
+  - type: Login
+    url: https://aws.amazon.com/console/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Contact
+    url: https://aws.amazon.com/contact-us/
+  - type: SpectralRules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/rules/amazon-timestream-spectral-rules.yml
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/vocabulary/amazon-timestream-vocabulary.yaml
+  - type: Features
+    data:
+      - name: Automation
+        description: Automate operational tasks with Amazon Timestream.
+      - name: API Access
+        description: Programmatic access to Amazon Timestream resources.
+  - type: UseCases
+    data:
+      - name: Cloud Operations
+        description: Use Amazon Timestream to manage and automate cloud operations.
+  - type: Integrations
+    url: https://aws.amazon.com/partners/
+integrations:
+  - name: Partner Programs
+  - name: Resources
+  - name: Success Stories
+  - name: Work with an AWS Partner
+  - name: AWS Marketplace
+  - name: AWS Partner Central
+  - name: Partner Paths
+  - name: co-sell with AWS
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+    url: https://apievangelist.com
+tags:
+  - Amazon Web Services
+  - Database
+  - IoT
+  - Time Series
+tags_raw:
+  - AWS
+  - Database
+  - Iot
+  - Time Series
+x-parent: amazon-web-services
+x-relationship: product

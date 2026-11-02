@@ -1,0 +1,254 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/timestream/pricing/
+sources:
+- https://aws.amazon.com/timestream/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Main rate tables are rendered dynamically (template placeholders in text); concrete numbers come
+  from the pricing-example sections and data transfer notes. Also mentions Database Savings Plans (1-year
+  commitment) without prices.
+plan_count: 15
+currency: USD
+plans:
+- name: Timestream for LiveAnalytics — writes
+  price_text: $0.50/million writes of 1 KiB
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: million writes of 1 KiB
+- name: Timestream for LiveAnalytics — memory store
+  price_text: $0.036/GB-hour
+  price: 0.036
+  currency: USD
+  period: per-use
+  unit: GB-hour
+- name: Timestream for LiveAnalytics — magnetic store
+  price_text: $0.03/GB-month
+  price: 0.03
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: Timestream for LiveAnalytics — queries (TCU)
+  price_text: $0.518/TCU-hour
+  price: 0.518
+  currency: USD
+  period: per-use
+  unit: TCU-hour
+- name: Timestream for InfluxDB — db.influx.2xlarge Single-AZ compute (example)
+  price_text: $0.956 per hour
+  price: 0.956
+  currency: USD
+  period: per-use
+  unit: instance-hour
+- name: Timestream for InfluxDB — db.influx.2xlarge Multi-AZ compute (example)
+  price_text: $1.913 per hour
+  price: 1.913
+  currency: USD
+  period: per-use
+  unit: instance-hour
+- name: Influx I/O-included storage (3K IOPS), Single-AZ (example)
+  price_text: $0.10 per GB-month
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: Influx I/O-included storage (3K IOPS), Multi-AZ (example)
+  price_text: $0.20 per GB-month
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: db.influx.8xlarge Single-AZ compute (example)
+  price_text: $3.825 per hour
+  price: 3.825
+  currency: USD
+  period: per-use
+  unit: instance-hour
+- name: db.influx.8xlarge Multi-AZ compute (example)
+  price_text: $7.65 per hour
+  price: 7.65
+  currency: USD
+  period: per-use
+  unit: instance-hour
+- name: Influx I/O-included storage (12K IOPS), Multi-AZ (example)
+  price_text: $0.70 per GB-month
+  price: 0.7
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: db.influx.16xlarge Multi-AZ compute (example)
+  price_text: $15.30 per hour
+  price: 15.3
+  currency: USD
+  period: per-use
+  unit: instance-hour
+- name: Influx I/O-included storage (16K IOPS), Single-AZ (example)
+  price_text: $0.50 per GB-month
+  price: 0.5
+  currency: USD
+  period: per-use
+  unit: GB-month
+- name: EC2 Regional Data Transfer
+  price_text: $.01 per GiB in/out
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: GiB
+- name: Data Transfer IN To Amazon EC2 From Carrier
+  price_text: $0.00 per GB
+  price: 0
+  currency: USD
+  period: per-use
+  unit: GB
+  included_quota: All data transfer in
+rate_limit_statements:
+- TCUs are on-demand and metered per second with a 30-second minimum.
+- For provisioned TCUs, you only pay for the duration these TCUs are active in your account, with a minimum
+  charge of 1 hour.
+- Partial instance-hours are billed in 1-second increments with a 10-minute minimum charge after a billable
+  status change
+- Data stored in magnetic store is billed by gigabyte-months and for a minimum of 100 GB per account in
+  a Region.
+- AWS customers receive 100GB of data transfer out to the internet free each month
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - compute
+  - data
+  plans:
+  - name: Timestream for LiveAnalytics — writes
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Timestream for LiveAnalytics — memory store
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Timestream for LiveAnalytics — magnetic store
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Timestream for LiveAnalytics — queries (TCU)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Timestream for InfluxDB — db.influx.2xlarge Single-AZ compute (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Timestream for InfluxDB — db.influx.2xlarge Multi-AZ compute (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Influx I/O-included storage (3K IOPS), Single-AZ (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Influx I/O-included storage (3K IOPS), Multi-AZ (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: db.influx.8xlarge Single-AZ compute (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: db.influx.8xlarge Multi-AZ compute (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Influx I/O-included storage (12K IOPS), Multi-AZ (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: db.influx.16xlarge Multi-AZ compute (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Influx I/O-included storage (16K IOPS), Single-AZ (example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: EC2 Regional Data Transfer
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: Data Transfer IN To Amazon EC2 From Carrier
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
