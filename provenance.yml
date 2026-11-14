@@ -5,6 +5,21 @@ artifacts:
   agentic-access/amazon-timestream-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  ai-preferences/amazon-timestream-ai-preferences.yml:
+    method: harvested
+    evidence: declared in the artifact
+  authentication/amazon-timestream-authentication.yml:
+    method: derived
+    evidence: declared in the artifact
+  certification/observations-2026-11-11.jsonl:
+    method: unknown
+    evidence: no authorship recorded
+  certification/status.yml:
+    method: unknown
+    evidence: no authorship recorded
+  cli/amazon-timestream-cli.yml:
+    method: searched
+    evidence: declared in the artifact
   collections/amazon-timestream-databases-api.opencollection.json:
     method: derived
     evidence: openapi/amazon-timestream-databases-api
@@ -35,6 +50,24 @@ artifacts:
   collections/amazon-timestream.postman_collection.json:
     method: derived
     evidence: openapi/amazon-timestream
+  compliance/amazon-timestream-compliance.yml:
+    method: harvested
+    evidence: declared in the artifact
+  conformance/amazon-timestream-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  conventions/amazon-timestream-conventions.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/amazon-timestream-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  eligibility/amazon-timestream-eligibility.yml:
+    method: harvested
+    evidence: declared in the artifact
+  errors/amazon-timestream-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   examples/amazon-timestream-example.json:
     method: unknown
     evidence: no authorship recorded
@@ -44,6 +77,9 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  hosts/amazon-timestream-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
   integrations/_index.yml:
     method: generated
     evidence: carries an API Evangelist house phrase
@@ -53,7 +89,184 @@ artifacts:
   json-ld/amazon-timestream-context.jsonld:
     method: unknown
     evidence: no authorship recorded
+  json-schema/amazon-timestream-cancel-query-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-cancel-query-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-batch-load-task-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-batch-load-task-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-database-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-backup-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-backup-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-cluster-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-cluster-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-instance-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-instance-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-parameter-group-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-db-parameter-group-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-scheduled-query-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-create-table-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
   json-schema/amazon-timestream-database-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-delete-database-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-delete-db-backup-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-delete-db-instance-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-delete-scheduled-query-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-delete-table-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-describe-account-settings-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-describe-batch-load-task-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-describe-batch-load-task-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-describe-database-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-describe-table-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-execute-scheduled-query-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-get-db-backup-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-get-db-cluster-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-get-db-instance-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-get-db-parameter-group-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-get-db-parameter-group-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-batch-load-tasks-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-batch-load-tasks-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-databases-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-databases-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-db-backups-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-db-backups-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-db-clusters-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-db-clusters-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-db-parameter-groups-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-db-parameter-groups-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-scheduled-queries-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-scheduled-queries-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-tables-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-list-tables-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-query-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-query-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-reboot-db-instance-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-restore-from-db-backup-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-restore-from-db-backup-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-account-settings-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-database-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-db-cluster-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-db-instance-input-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-db-instance-output-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-scheduled-query-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-update-table-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-write-records-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/amazon-timestream-write-records-response-schema.json:
     method: unknown
     evidence: no authorship recorded
   json-structure/amazon-timestream-database-structure.json:
@@ -62,7 +275,7 @@ artifacts:
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-11-02T082323.yml:
+  kin/checks-2026-11-06T143934.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -131,14 +344,34 @@ artifacts:
   kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  openapi/_original/amazon-timestream-openapi.yml:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
+  kin/score-2026-11-06T143934.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  llms/amazon-timestream-llms-provenance.yml:
+    method: unknown
+    evidence: no authorship recorded
+  llms/amazon-timestream-llms.txt:
+    method: unknown
+    evidence: no authorship recorded
+  mcp/amazon-timestream-mcp.yml:
+    method: searched
+    evidence: declared in the artifact
   openapi/amazon-timestream-batch-load-task-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-timestream-databases-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-timestream-db-backup-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-timestream-db-cluster-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-timestream-db-instance-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  openapi/amazon-timestream-db-parameter-group-api-openapi.yml:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-timestream-operations-api-openapi.yml:
@@ -154,8 +387,14 @@ artifacts:
     method: unknown
     evidence: no authorship recorded
   openapi/amazon-timestream-write-api-openapi.yml:
+    method: unknown
+    evidence: no authorship recorded
+  packages/amazon-timestream-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  patterns/amazon-timestream-patterns.yml:
     method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+    evidence: declared in the artifact
   plans/amazon-timestream-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
@@ -171,10 +410,16 @@ artifacts:
   postman/amazon-timestream-write-api.postman_collection.json:
     method: derived
     evidence: openapi/amazon-timestream-write-api
+  privacy/amazon-timestream-privacy-policy.yml:
+    method: harvested
+    evidence: declared in the artifact
   rate-limits/amazon-timestream-rate-limits.yml:
-    method: generated
+    method: searched
     evidence: declared in the artifact
   rules/amazon-timestream-jsonschema-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/amazon-timestream-rules.yml:
     method: generated
     evidence: declared in the artifact
   rules/amazon-timestream-spectral-rules.yml:
@@ -192,12 +437,36 @@ artifacts:
   sla/amazon-timestream-sla.yml:
     method: generated
     evidence: declared in the artifact
+  smithy/timestream-influxdb-2023-01-27.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/timestream-influxdb/service/2023-01-27/timestream-influxdb-2023-01-27.json
+      (sha256 1db752436ec3, fetched 2026-11-11T21:15:59+00:00)
   smithy/timestream-query-2018-11-01.json:
-    method: unknown
-    evidence: no authorship recorded
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/timestream-query/service/2018-11-01/timestream-query-2018-11-01.json
+      (sha256 6364baaf1f24, fetched 2026-11-11T21:15:57+00:00)
   smithy/timestream-write-2018-11-01.json:
+    method: harvested
+    evidence: byte-identical to https://raw.githubusercontent.com/aws/api-models-aws/3cd98287b471c106254abd89279cc87308d38bfd/models/timestream-write/service/2018-11-01/timestream-write-2018-11-01.json
+      (sha256 a007f76c4fa7, fetched 2026-11-11T21:15:58+00:00)
+  terms/amazon-timestream-terms-of-service.yml:
+    method: harvested
+    evidence: declared in the artifact
+  vendors/amazon-timestream-vendors.yml:
     method: unknown
     evidence: no authorship recorded
   vocabulary/amazon-timestream-vocabulary.yaml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/amazon-timestream-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/amazon-timestream-midway-auth-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-timestream-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/amazon-timestream-well-known.yml:
     method: unknown
     evidence: no authorship recorded

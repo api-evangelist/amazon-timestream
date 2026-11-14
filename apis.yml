@@ -1,8 +1,9 @@
 name: Amazon Timestream
-description: >-
-  Amazon Timestream is a fast, scalable, and serverless time series database service designed for IoT and operational
-  applications. It makes it easy to store and analyze trillions of events per day at a fraction of the cost of
-  relational databases, with built-in time series analytics functions and automatic data lifecycle management.
+
+description: Amazon Timestream is a fast, scalable, and serverless time series database service designed for IoT and operational applications.
+  It makes it easy to store and analyze trillions of events per day at a fraction of the cost of relational databases, with built-in time series
+  analytics functions and automatic data lifecycle management.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -15,24 +16,163 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 specificationVersion: '0.23'
+
 accessModel:
   pricing: freemium
-  onboarding: unknown
+  onboarding: self-serve
   trial: false
-  try_now: false
+  try_now: true
   public: false
-  label: Freemium
-  confidence: low
+  gated: none
+  gated_source:
+  - onboarding
+  label: Freemium · Self-serve signup
+  confidence: high
   source:
   - plans
+  - authentication
+  - rate-limits
   - security
-  generated: '2026-11-06'
+  generated: '2026-11-13'
   method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+
 url: https://aws.amazon.com/timestream/
+
 created: '2024-01-15'
+
 modified: '2026-05-19'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com
+
+tags:
+- Amazon Web Services
+- Database
+- IoT
+- Time Series
+tags_raw:
+- AWS
+- Database
+- IoT
+- Time Series
+
+common:
+- type: GettingStarted
+  url: https://developer.amazon.com/frustration-free-setup
+- type: Spectral
+  url: rules/amazon-timestream-spectral-rules.yml
+- type: Spectral
+  url: rules/amazon-timestream-rules.yml
+- type: Spectral
+  url: rules/amazon-timestream-jsonschema-spectral-rules.yml
+- type: JSONLD
+  url: json-ld/amazon-timestream-context.jsonld
+- type: Vocabulary
+  url: vocabulary/amazon-timestream-vocabulary.yml
+- type: DataModel
+  url: data-model/amazon-timestream-data-model.yml
+- type: CLI
+  url: cli/amazon-timestream-cli.yml
+- type: Idempotency
+  url: conventions/amazon-timestream-conventions.yml
+- type: Conventions
+  url: conventions/amazon-timestream-conventions.yml
+- type: Compliance
+  url: https://aws.amazon.com/compliance/
+- type: ErrorCatalog
+  url: errors/amazon-timestream-problem-types.yml
+- type: Conformance
+  url: conformance/amazon-timestream-conformance.yml
+- type: LLMsTxt
+  url: llms/amazon-timestream-llms.txt
+- type: MCPServer
+  url: mcp/amazon-timestream-mcp.yml
+- type: SecurityTxt
+  url: well-known/amazon-timestream-security.txt
+- type: WellKnown
+  url: well-known/amazon-timestream-well-known.yml
+- type: Hosts
+  url: hosts/amazon-timestream-hosts.yml
+- type: Vendors
+  url: vendors/amazon-timestream-vendors.yml
+- type: SDKs
+  url: packages/amazon-timestream-packages.yml
+- type: Packages
+  url: packages/amazon-timestream-packages.yml
+- type: Security
+  url: https://aws.amazon.com/security/?nc2=h_dsc_aa_sec
+- type: Newsroom
+  url: https://aws.amazon.com/media/?nc2=h_sol_ind_med
+- type: Authentication
+  url: authentication/amazon-timestream-authentication.yml
+- type: Plans
+  url: plans/amazon-timestream-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/amazon-timestream-rate-limits.yml
+- type: FinOps
+  url: finops/amazon-timestream-finops.yml
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-timestream/overview
+- type: AgenticAccess
+  url: agentic-access/amazon-timestream-agentic-access.yml
+- type: TrustCenter
+  url: security/amazon-timestream-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-timestream-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-timestream-domain-security.yml
+- type: Portal
+  url: https://aws.amazon.com/
+- type: Website
+  url: https://aws.amazon.com/timestream/
+- type: Documentation
+  url: https://docs.aws.amazon.com/timestream/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: Support
+  url: https://aws.amazon.com/premiumsupport/
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: Console
+  url: https://console.aws.amazon.com/timestream/
+- type: Signup
+  url: https://signin.aws.amazon.com/signup?request_type=register
+- type: Login
+  url: https://aws.amazon.com/console/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Contact
+  url: https://aws.amazon.com/contact-us/
+- type: Features
+  data:
+  - name: Automation
+    description: Automate operational tasks with Amazon Timestream.
+  - name: API Access
+    description: Programmatic access to Amazon Timestream resources.
+- type: UseCases
+  data:
+  - name: Cloud Operations
+    description: Use Amazon Timestream to manage and automate cloud operations.
+- type: Integrations
+  url: https://aws.amazon.com/partners/
+- type: UsageTerms
+  url: terms/amazon-timestream-terms-of-service.yml
+- type: DataProcessing
+  url: privacy/amazon-timestream-privacy-policy.yml
+- type: Attestations
+  url: compliance/amazon-timestream-compliance.yml
+- type: Eligibility
+  url: eligibility/amazon-timestream-eligibility.yml
+- type: AIPreferences
+  url: ai-preferences/amazon-timestream-ai-preferences.yml
+
 apis:
 - aid: amazon-timestream:amazon-timestream-databases-api
   name: Amazon Timestream Databases API
@@ -54,6 +194,18 @@ apis:
     url: https://aws.amazon.com/timestream/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/timestream/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-database-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-database-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-databases-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-databases-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-delete-database-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-describe-database-request-schema.json
 - aid: amazon-timestream:amazon-timestream-query-api
   name: Amazon Timestream Query API
   description: Operations for querying time series data.
@@ -72,6 +224,14 @@ apis:
     url: https://aws.amazon.com/timestream/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/timestream/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-query-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-query-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-cancel-query-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-cancel-query-request-schema.json
 - aid: amazon-timestream:amazon-timestream-tables-api
   name: Amazon Timestream Tables API
   description: Operations for managing Timestream tables.
@@ -90,6 +250,18 @@ apis:
     url: https://aws.amazon.com/timestream/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/timestream/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-table-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-tables-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-table-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-tables-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-delete-table-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-describe-table-request-schema.json
 - aid: amazon-timestream:amazon-timestream-write-api
   name: Amazon Timestream Write API
   description: Operations for writing time series data.
@@ -109,11 +281,13 @@ apis:
     url: https://aws.amazon.com/timestream/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/timestream/faqs/
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-write-records-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-write-records-response-schema.json
 - aid: amazon-timestream:amazon-timestream-batch-load-task-api
   name: Amazon Timestream Timestream Batch Load Task API
-  description: >-
-    The Timestream Batch Load Task API from Amazon Timestream — 3 operation(s) for timestream batch load
-    task.
+  description: The Timestream Batch Load Task API from Amazon Timestream — 3 operation(s) for timestream batch load task.
   humanURL: https://aws.amazon.com/timestream/
   baseURL: https://ingest.timestream.amazonaws.com
   tags:
@@ -121,10 +295,21 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-timestream-batch-load-task-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-batch-load-tasks-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-batch-load-task-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-batch-load-tasks-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-describe-batch-load-task-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-batch-load-task-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-describe-batch-load-task-request-schema.json
 - aid: amazon-timestream:amazon-timestream-operations-api
   name: Amazon Timestream Timestream Operations API
-  description: >-
-    The Timestream Operations API from Amazon Timestream — 8 operation(s) for timestream operations.
+  description: The Timestream Operations API from Amazon Timestream — 8 operation(s) for timestream operations.
   humanURL: https://aws.amazon.com/timestream/
   baseURL: https://ingest.timestream.amazonaws.com
   tags:
@@ -132,11 +317,21 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-timestream-operations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-reboot-db-instance-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-restore-from-db-backup-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-query-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-account-settings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-describe-account-settings-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-restore-from-db-backup-output-schema.json
 - aid: amazon-timestream:amazon-timestream-scheduled-query-api
   name: Amazon Timestream Timestream Scheduled Query API
-  description: >-
-    The Timestream Scheduled Query API from Amazon Timestream — 6 operation(s) for timestream scheduled
-    query.
+  description: The Timestream Scheduled Query API from Amazon Timestream — 6 operation(s) for timestream scheduled query.
   humanURL: https://aws.amazon.com/timestream/
   baseURL: https://ingest.timestream.amazonaws.com
   tags:
@@ -144,87 +339,128 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-timestream-scheduled-query-api-openapi.yml
-common:
-  - type: Plans
-    url: plans/amazon-timestream-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/amazon-timestream-rate-limits.yml
-  - type: FinOps
-    url: finops/amazon-timestream-finops.yml
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/amazon-timestream/overview
-  - type: AgenticAccess
-    url: agentic-access/amazon-timestream-agentic-access.yml
-  - type: TrustCenter
-    url: security/amazon-timestream-trust-center.yml
-  - type: VulnerabilityDisclosure
-    url: security/amazon-timestream-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/amazon-timestream-domain-security.yml
-  - type: Portal
-    url: https://aws.amazon.com/
-  - type: Website
-    url: https://aws.amazon.com/timestream/
-  - type: Documentation
-    url: https://docs.aws.amazon.com/timestream/
-  - type: TermsOfService
-    url: https://aws.amazon.com/service-terms/
-  - type: PrivacyPolicy
-    url: https://aws.amazon.com/privacy/
-  - type: Support
-    url: https://aws.amazon.com/premiumsupport/
-  - type: GitHubOrganization
-    url: https://github.com/aws
-  - type: Console
-    url: https://console.aws.amazon.com/timestream/
-  - type: Signup
-    url: https://signin.aws.amazon.com/signup?request_type=register
-  - type: Login
-    url: https://aws.amazon.com/console/
-  - type: StatusPage
-    url: https://health.aws.amazon.com/health/status
-  - type: Contact
-    url: https://aws.amazon.com/contact-us/
-  - type: SpectralRules
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/rules/amazon-timestream-spectral-rules.yml
-  - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/amazon-timestream/refs/heads/main/vocabulary/amazon-timestream-vocabulary.yaml
-  - type: Features
-    data:
-      - name: Automation
-        description: Automate operational tasks with Amazon Timestream.
-      - name: API Access
-        description: Programmatic access to Amazon Timestream resources.
-  - type: UseCases
-    data:
-      - name: Cloud Operations
-        description: Use Amazon Timestream to manage and automate cloud operations.
-  - type: Integrations
-    url: https://aws.amazon.com/partners/
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-scheduled-query-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-execute-scheduled-query-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-scheduled-queries-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-scheduled-queries-response-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-scheduled-query-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-delete-scheduled-query-request-schema.json
+- aid: amazon-timestream:amazon-timestream-db-backup-api
+  name: Amazon Timestream Timestream Db Backup API
+  description: The Timestream Db Backup API from Amazon Timestream — 4 operation(s) for timestream db backup.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Db Backup
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-db-backup-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-delete-db-backup-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-backup-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-get-db-backup-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-db-backups-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-backup-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-db-backups-output-schema.json
+- aid: amazon-timestream:amazon-timestream-db-cluster-api
+  name: Amazon Timestream Timestream Db Cluster API
+  description: The Timestream Db Cluster API from Amazon Timestream — 5 operation(s) for timestream db cluster.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Db Cluster
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-db-cluster-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-cluster-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-get-db-cluster-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-db-cluster-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-db-clusters-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-cluster-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-db-clusters-output-schema.json
+- aid: amazon-timestream:amazon-timestream-db-instance-api
+  name: Amazon Timestream Timestream Db Instance API
+  description: The Timestream Db Instance API from Amazon Timestream — 6 operation(s) for timestream db instance.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Db Instance
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-db-instance-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-instance-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-delete-db-instance-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-instance-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-get-db-instance-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-db-instance-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-update-db-instance-input-schema.json
+- aid: amazon-timestream:amazon-timestream-db-parameter-group-api
+  name: Amazon Timestream Timestream Db Parameter Group API
+  description: The Timestream Db Parameter Group API from Amazon Timestream — 3 operation(s) for timestream db parameter group.
+  humanURL: https://aws.amazon.com/timestream/
+  baseURL: https://ingest.timestream.amazonaws.com
+  tags:
+  - Timestream Db Parameter Group
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-timestream-db-parameter-group-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-parameter-group-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-get-db-parameter-group-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-db-parameter-groups-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-create-db-parameter-group-input-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-list-db-parameter-groups-output-schema.json
+  - type: JSONSchema
+    url: json-schema/amazon-timestream-get-db-parameter-group-input-schema.json
+
 integrations:
-  - name: Partner Programs
-  - name: Resources
-  - name: Success Stories
-  - name: Work with an AWS Partner
-  - name: AWS Marketplace
-  - name: AWS Partner Central
-  - name: Partner Paths
-  - name: co-sell with AWS
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-    url: https://apievangelist.com
-tags:
-  - Amazon Web Services
-  - Database
-  - IoT
-  - Time Series
+- name: Partner Programs
+- name: Resources
+- name: Success Stories
+- name: Work with an AWS Partner
+- name: AWS Marketplace
+- name: AWS Partner Central
+- name: Partner Paths
+- name: co-sell with AWS
+
 tags_raw:
-  - AWS
-  - Database
-  - Iot
-  - Time Series
+- AWS
+- Database
+- Iot
+- Time Series
+
 x-parent: amazon-web-services
+
 x-relationship: product
+x-enrichment:
+  date: '2026-11-11'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v6
